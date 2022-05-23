@@ -113,6 +113,20 @@ const Login = () => {
 
                         <Button className="ml-3">Login</Button>
                     </div>
+
+                    <div className="flex items-center justify-end mt-4 gap-3">
+                        <Link href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/login/github`}>
+                            <a className="underline text-sm text-gray-600 hover:text-gray-900">
+                                Github
+                            </a>
+                        </Link>
+
+                        <Link href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/login/discord`}>
+                            <a className="underline text-sm text-gray-600 hover:text-gray-900">
+                                Discord
+                            </a>
+                        </Link>
+                    </div>
                 </form>
             </AuthCard>
         </GuestLayout>
