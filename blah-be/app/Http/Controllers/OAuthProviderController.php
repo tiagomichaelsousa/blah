@@ -44,7 +44,7 @@ class OAuthProviderController extends Controller
 
         Auth::login($user);
 
-        return redirect(env('FRONTEND_URL'));
+        return redirect(config('app.frontend_url'));
     }
 
     /**
