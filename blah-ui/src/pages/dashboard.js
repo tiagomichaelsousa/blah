@@ -1,7 +1,17 @@
+import { useEffect } from 'react'
 import AppLayout from '@/components/Layouts/AppLayout'
 import Head from 'next/head'
+import echo from '@/lib/echo'
 
 const Dashboard = () => {
+
+    useEffect(() => {
+        echo.channel('public-broadcast')
+            .listen('BroadcastEvent', (e) => {
+                console.log(e);
+            });
+    }, []);
+
     return (
         <AppLayout
             header={

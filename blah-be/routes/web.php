@@ -1,5 +1,7 @@
 <?php
 
+use App\Events\BroadcastEvent;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return ['Laravel' => app()->version()];
+});
+
+Route::get('/broadcast', function () {
+    $user = User::first();
+    BroadcastEvent::dispatch($user);
+    
     return ['Laravel' => app()->version()];
 });
 
